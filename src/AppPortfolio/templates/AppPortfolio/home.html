@@ -1,0 +1,75 @@
+{% extends 'AppPortfolio/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<header>
+  <div class="header-content">
+    <div>
+      <h1>Dévéloppeur Python & Data Scientist</h1>
+      <h2>Macktireh Abdi Soubaneh</h2>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="Projet">
+    <div class="projet-heading">
+      <h3>QUELQUES PROJETS</h3>
+    </div>
+
+    <div class="projet-container">
+      <div class="projet-box">
+        <a href="">
+          <div class="projet-img">
+            <img src=" {% static 'AppPortfolio/img/PowerBI.jpg' %} " alt="Power BI">
+          </div>
+
+          <div class="projet-text">
+            <span>01 Janvier 2022 | Mack Dev </span>
+            <h5 class="projet-title">DÉPLOYER UNE APPLICATION DJANGO SUR PYTHONANYWHERE</h5>
+            <p class="intro">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus, dolores
+              repudiandae, incidunt
+              repellat nesciunt numquam ad molestias eius vero labore sapiente distinctio animi provident
+              iure,
+              aspernatur
+              iste debitis atque adipisci tenetur minima! Explicabo saepe iure, sunt placeat voluptas
+              unde.
+            </p>
+
+            <div class="card-botton">
+              <div class="box-level">
+                <img src=" {% static 'AppPortfolio/img/level.svg' %} " alt="Icon Niveau">
+                <p class="p-level">Niveau: Avancer</p>
+              </div>
+
+              <div class="box-like">
+                <img src=" {% static 'AppPortfolio/img/like.svg' %} " alt="Icon like">
+                <p class="p-count-like">6</p>
+              </div>
+
+              <div class="box-comment">
+                <img src=" {% static 'AppPortfolio/img/comment.svg' %} " alt="Icon comment">
+                <p class="p-count-comment">4</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <a href="" class="btn-all-project">TOUS LES PROJETS</a>
+
+  </section>
+
+</main>
+
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" src=" {% static 'AppPortfolio/js/home.js' %} "></script>
+{% endblock %}
