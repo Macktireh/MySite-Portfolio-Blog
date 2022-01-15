@@ -20,30 +20,25 @@
       <h3>QUELQUES PROJETS</h3>
     </div>
 
+    {% for project in Projects.all %}
     <div class="projet-container">
       <div class="projet-box">
         <a href="">
           <div class="projet-img">
-            <img src=" {% static 'AppPortfolio/img/PowerBI.jpg' %} " alt="Power BI">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
           </div>
 
           <div class="projet-text">
-            <span>01 Janvier 2022 | Mack Dev </span>
-            <h5 class="projet-title">DÉPLOYER UNE APPLICATION DJANGO SUR PYTHONANYWHERE</h5>
+            <span>{{ project.create_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
+            <h5 class="projet-title">{{ project.title }}</h5>
             <p class="intro">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas delectus, dolores
-              repudiandae, incidunt
-              repellat nesciunt numquam ad molestias eius vero labore sapiente distinctio animi provident
-              iure,
-              aspernatur
-              iste debitis atque adipisci tenetur minima! Explicabo saepe iure, sunt placeat voluptas
-              unde.
+              {{ project.introduction }}.
             </p>
 
             <div class="card-botton">
               <div class="box-level">
                 <img src=" {% static 'AppPortfolio/img/level.svg' %} " alt="Icon Niveau">
-                <p class="p-level">Niveau: Avancer</p>
+                <p class="p-level">Niveau: {{ project.niveau }}</p>
               </div>
 
               <div class="box-like">
@@ -60,12 +55,19 @@
         </a>
       </div>
     </div>
+    {% endfor %}
 
     <a href="" class="btn-all-project">TOUS LES PROJETS</a>
 
   </section>
 
 </main>
+
+<aside>
+  <div class="btn-top">
+    <img src="{% static 'AppPortfolio/img/arrow-up-solid.svg' %}" id="arrow-up">
+  </div>
+</aside>
 
 {% endblock %}
 
