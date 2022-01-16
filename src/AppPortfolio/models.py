@@ -7,11 +7,11 @@ from django.utils import timezone
 
 
 def rename_img(instance, filename):
-        upload_to = 'ProjectsImages/'
-        ext = filename.split('.')[-1]
-        if instance.slug:
-            filename = f"{instance.niveau}/{instance.slug}_{instance.update_date}.{ext}"
-        return os.path.join(upload_to, filename)
+    upload_to = 'ProjectsImages/'
+    ext = filename.split('.')[-1]
+    if instance.slug:
+        filename = f"{instance.niveau}/{instance.slug}_{instance.update_date}.{ext}"
+    return os.path.join(upload_to, filename)
     
 class Project(models.Model):
     
@@ -26,17 +26,17 @@ class Project(models.Model):
     
     # Champ Niveau du projet (débutant, intermédiaire, avancé)
     list_niveau = (
-        ('beginner', 'Débutant'),
-        ('intermediate', 'Intermédiaire'),
-        ('advanced', 'Avancé')
+        ('Débutant', 'Débutant'),
+        ('Intermédiaire', 'Intermédiaire'),
+        ('Avancé', 'Avancé')
     )
     niveau = models.CharField(max_length=60, choices=list_niveau, verbose_name='Niveau')
     
     # Champ date de création du projet
-    create_date = models.DateTimeField(auto_now_add=True, verbose_name='date Creation')
+    create_date = models.DateTimeField(auto_now_add=True, verbose_name='Date Creation')
     
     # Champ date de modification du projet
-    update_date = models.DateTimeField(auto_now=True, verbose_name='date de modification')
+    update_date = models.DateTimeField(auto_now=True, verbose_name='Date de Modification')
     
     # Champ language de programmation utliser du projet
     technology = models.CharField(max_length=500, verbose_name='Technologie')
@@ -58,7 +58,10 @@ class Project(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, default="draft", max_length=20)
     
     # Champ date de publication du projet
-    published_date = models.DateTimeField(default=timezone.now())
+    published_date = models.DateTimeField(default=timezone.now(), verbose_name='Date de Publication')
+    
+    # Projet favorie
+    favorites = models.BooleanField(default=False)
     
     class Meta:
         ordering = ['-published_date']
@@ -73,4 +76,15 @@ class Project(models.Model):
         
     
     
+class Category(models.Model):
+    category = models.CharField(max_length=100, verbose_name='Catégorie')
+    slug = models.SlugField(max_length=100)
+    update_date = models.DateTimeField(auto_now=True, verbose_name='Date de modification')
+    
+    def __str__(self):
+        return self.category
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.category)
+        super().save(*args, **kwargs)
     

@@ -3,24 +3,14 @@
 
 
 {% block content %}
+<!-- <header class="header_project">
+    <h1></h1>
+</header> -->
 
-<!-- header -->
-<header class="header-home">
-  <div class="header-content">
-    <div>
-      <h1>Dévéloppeur Python & Data Scientist</h1>
-      <h2>Macktireh Abdi Soubaneh</h2>
-    </div>
-  </div>
-</header>
-
-<!-- main -->
-<main class="main-home">
-
-  <!-- section quelques projets -->
+<main>
   <section class="projects">
     <div class="projet-heading">
-      <h3>QUELQUES PROJETS</h3>
+      <h3>TOUS LES PROJETS</h3>
     </div>
 
     <div class="projet-container">
@@ -63,22 +53,13 @@
       {% endif %}
       {% endfor %}
     </div>
-
-    <a href="{% url 'projects' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
-
   </section>
 
+  <!-- Recherche et filtre -->
+  <aside>
+    <div class="filter-contenaire">
+
+    </div>
+  </aside>
 </main>
-
-<aside>
-  <div class="btn-top">
-    <img src="{% static 'AppPortfolio/img/arrow-up-solid.svg' %}" id="arrow-up">
-  </div>
-</aside>
-
-{% endblock %}
-
-
-{% block js %}
-<script type="text/javascript" src=" {% static 'AppPortfolio/js/home.js' %} "></script>
 {% endblock %}
