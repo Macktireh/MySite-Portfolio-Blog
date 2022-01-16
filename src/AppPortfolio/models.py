@@ -2,6 +2,7 @@ import os
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.utils import timezone
 
 
 
@@ -18,16 +19,16 @@ class Project(models.Model):
     title = models.CharField(max_length=128, verbose_name='Titre')
     
     # Champ auteur du projet
-    author = models.ForeignKey(User, related_name='author_username', on_delete=models.CASCADE, verbose_name='Auteur')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Auteur')
     
     # Champ slug du projet
     slug = models.SlugField(null=True, blank=True)
     
     # Champ Niveau du projet (débutant, intermédiaire, avancé)
     list_niveau = (
-        ('debutant', 'Débutant'),
-        ('intermediaire', 'Intermédiaire'),
-        ('avance', 'Avancé')
+        ('beginner', 'Débutant'),
+        ('intermediate', 'Intermédiaire'),
+        ('advanced', 'Avancé')
     )
     niveau = models.CharField(max_length=60, choices=list_niveau, verbose_name='Niveau')
     
@@ -44,11 +45,27 @@ class Project(models.Model):
     introduction = models.TextField(verbose_name='Introduction')
     
     # Champ body c'est à dire le contenu et le dédail du projet
-    body = models.TextField()
+    body = models.TextField(blank=True)
     
     # Champ image du projet
     image = models.ImageField(upload_to=rename_img)
     
+    # Champ status du projet
+    STATUS_CHOICES = (
+        ('draft', 'Brouillon'),
+        ('published', 'Publié')
+    )
+    status = models.CharField(choices=STATUS_CHOICES, default="draft", max_length=20)
+    
+    # Champ date de publication du projet
+    published_date = models.DateTimeField(default=timezone.now())
+    
+    class Meta:
+        ordering = ['-published_date']
+    
+    def __str__(self):
+        return self.title
+
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

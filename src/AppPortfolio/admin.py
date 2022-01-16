@@ -11,21 +11,30 @@ class ProjectAdmin(admin.ModelAdmin):
         'nom_du_auteur',
         'niveau',
         'technology',
+        'status',
+        'published_date',
         'update_date',
-        'image',
     )
     
     search_fields = (
         'title',
-        'nom_du_auteur',
+        'author__first_name',
+        'author__last_name',
+    )
+    
+    list_filter = (
         'niveau',
-        'technology',
+        'status',
+        'create_date',
+        'published_date',
     )
     
     list_editable = (
         'title',
         'niveau',
         'technology',
+        'status',
+        'published_date',
     )
     
     def nom_du_auteur(self, obj):

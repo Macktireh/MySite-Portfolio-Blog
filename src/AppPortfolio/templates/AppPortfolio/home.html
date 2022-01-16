@@ -20,8 +20,9 @@
       <h3>QUELQUES PROJETS</h3>
     </div>
 
-    {% for project in Projects.all %}
     <div class="projet-container">
+      {% for project in Projects.all %}
+      {% if project.status == 'published' %}
       <div class="projet-box">
         <a href="">
           <div class="projet-img">
@@ -29,12 +30,13 @@
           </div>
 
           <div class="projet-text">
-            <span>{{ project.create_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
+            <span>{{ project.published_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
             <h5 class="projet-title">{{ project.title }}</h5>
             <p class="intro">
               {{ project.introduction }}.
             </p>
-
+          </div>
+          <div class="card-contenaire">
             <div class="card-botton">
               <div class="box-level">
                 <img src=" {% static 'AppPortfolio/img/level.svg' %} " alt="Icon Niveau">
@@ -52,12 +54,14 @@
               </div>
             </div>
           </div>
+
         </a>
       </div>
+      {% endif %}
+      {% endfor %}
     </div>
-    {% endfor %}
 
-    <a href="" class="btn-all-project">TOUS LES PROJETS</a>
+    <a href="" class="btn-all-project">VOIR TOUS LES PROJETS</a>
 
   </section>
 

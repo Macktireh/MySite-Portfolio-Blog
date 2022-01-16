@@ -1,11 +1,14 @@
 .projet-box
     width: 360px
+    height: 450px
     background-color: $color4
     margin: 20px
     border-radius: 8px
     box-shadow: 0 0 2px $color5
     transition: 0.3s ease-in-out
     transform: scale(1)
+    display: flex
+    flex-direction: column
 
     &:hover
         box-shadow: 0 0 10px $color5
@@ -34,18 +37,19 @@
         .projet-title
             padding: 0
             margin: 5px 0
+            height: 60px
             font-size: 1.3rem
             font-weight: 500
             color: $color2
             display: -webkit-box
-            -webkit-line-clamp: 3
+            -webkit-line-clamp: 2
             -webkit-box-orient: vertical
             overflow: hidden
             text-overflow: ellipsis
 
-        &:hover
-            color: $color3
-            transition: 0.3s
+            &:hover
+                color: $color3
+                transition: 0.3s
 
         .intro
             margin: 5px 0
@@ -58,12 +62,23 @@
             overflow: hidden
             text-overflow: ellipsis
 
+    .card-contenaire
+        // margin-top: 15px
+        // display: flex
+        // justify-content: center
+        // align-items: center
+        margin: auto
+
         .card-botton
-            margin-top: 15px
+            // margin-top: 15px
             display: flex
-            justify-content: space-between
+            justify-content: space-around
             align-items: center
+
             color: $color5
+
+            // .card-botton::not(:nth-child(1))
+            //     margin-left: 15px
 
             .box-level, .box-like, .box-comment
                 margin: 0
