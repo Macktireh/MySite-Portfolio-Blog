@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,51 +5,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>{% block title %}{% endblock title %}</title>
 
-  <link rel="stylesheet" href=" {% static 'AppPortfolio/css/style.css' %} ">
+
+  {% block style_icon %}{% endblock style_icon %}
+
 </head>
 
 <body>
+  <!-- Navbar -->
   <nav class="nav-bar">
-
-    <a class="logo" href="{% url 'home' %}"><img src=" {% static 'AppPortfolio/img/logo.png' %} "
-        alt="logo Macktireh"></a>
-    <div class="menu">
-      <ul>
-        <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
-        <li class="nav-item"><a href="{% url 'projects' %}">Projet</a></li>
-        <li class="nav-item"><a href="#">Blog</a></li>
-        <li class="nav-item"><a href="#">Contact</a></li>
-      </ul>
-    </div>
+    {% include 'AppPortfolio/components/navbar.html' %}
   </nav>
 
-  {% block content %}{% endblock %}
 
+  <!-- Content = header + main -->
+  {% block content %}{% endblock content %}
 
+  <!-- Footer -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-content-box">
-        <a class="footer-logo" href="{% url 'home' %}">
-          <img src="{% static 'AppPortfolio/img/logo.png' %}" alt="logo Macktireh">
-        </a>
-      </div>
-
-      <div class="footer-content-box ul-container">
-        <ul>
-          <li><a href=""><img src="{% static 'AppPortfolio/img/linkedin.svg' %}" alt="Compte linkedin"></a></li>
-          <li><a href=""><img class="ml" src="{% static 'AppPortfolio/img/github.svg' %}" alt="Compte github"></a></li>
-          <li><a href=""><img src="{% static 'AppPortfolio/img/twitter.svg' %}" alt="Compte twitter"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>copyright &copy;2022 Macktireh Abdi Soubaneh | <a href="">Mentions légales</a></p>
-    </div>
+    {% include 'AppPortfolio/components/footer.html' %}
   </footer>
 
+  <!-- JS -->
   {% block js %}{% endblock %}
 </body>
 

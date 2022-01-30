@@ -158,10 +158,6 @@ a:visited {
   width: 25px;
   transition: 10s ease-in-out;
 }
-.btn-top .arrow-up-click {
-  top: -5px;
-  bottom: -5px;
-}
 
 .btn-top-show {
   transition: 0.5s;

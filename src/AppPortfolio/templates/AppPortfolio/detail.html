@@ -1,0 +1,34 @@
+{% extends 'AppPortfolio/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- main -->
+<main class="main-home">
+
+
+
+  <p>{{ project.status }} </p>
+
+
+
+  <span>{{ project.published_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
+  <h5 class="projet-title">{{ project.title }}</h5>
+  <p class="intro">
+    {{ project.introduction }}.
+  </p>
+
+  <p class="p-level">Niveau: {{ project.niveau }}</p>
+
+
+</main>
+
+
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" src=" {% static 'AppPortfolio/js/home.js' %} "></script>
+{% endblock %}

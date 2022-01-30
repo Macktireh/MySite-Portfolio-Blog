@@ -1,0 +1,11 @@
+{% load static %}
+
+<a class="logo" href="{% url 'home' %}"><img src=" {% static 'AppPortfolio/img/logo.png' %} " alt="logo Macktireh"></a>
+<div class="menu">
+  <ul>
+    <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="nav-item"><a href="{% url 'projects' %}">Projet</a></li>
+    <li class="nav-item"><a href="#">Blog</a></li>
+    <li class="nav-item"><a href="#">Contact</a></li>
+  </ul>
+</div>
