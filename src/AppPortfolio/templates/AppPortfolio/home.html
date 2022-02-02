@@ -15,16 +15,41 @@
 
 <!-- header -->
 <header class="header-home">
-  <div class="header-content">
-    <div>
-      <h1>Dévéloppeur Python & Data Scientist</h1>
-      <h2>Macktireh Abdi Soubaneh</h2>
+  <div class="container-content">
+    <div class="header-content">
+      <div>
+        <h1>Dévéloppeur Python & Data Scientist</h1>
+        <h2>Macktireh Abdi Soubaneh</h2>
+      </div>
     </div>
+  </div>
+  <div class="img-header">
+    <img src="{% static 'AppPortfolio/img/code-solid.svg' %}" alt="Python">
+    <!-- <img src="{% static 'AppPortfolio/img/python.png' %}" alt="Python"> -->
   </div>
 </header>
 
 <!-- main -->
 <main>
+
+  <!-- presentation -->
+  <section class="presentation">
+    <div class="container-presntation">
+      <h2>Développeur Python | Data Scientist | Expert Power BI</h2>
+      <hr>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, totam alias eos quia obcaecati repellendus
+        possimus, reiciendis tempora dolore tempore nulla cupiditate officia deserunt soluta! Accusamus corrupti commodi
+        enim dolor explicabo esse quidem, eligendi numquam minus magnam ab provident mollitia ad sint vitae molestias,
+        tempora debitis laudantium excepturi ipsum deleniti.</p>
+    </div>
+  </section>
+
+  <!-- Compétence -->
+  <section class="competence">
+    <div class="competence__container">
+      <h2>Compétence Développeur</h2>
+    </div>
+  </section>
 
   <!-- section quelques projets -->
   <section class="projects">
@@ -46,14 +71,7 @@
     <a href="{% url 'projects' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
 
   </section>
-
 </main>
-
-<aside>
-  <div class="btn-top">
-    <img src="{% static 'AppPortfolio/img/arrow-up-solid.svg' %}" id="arrow-up">
-  </div>
-</aside>
 
 {% endblock %}
 

@@ -2,6 +2,15 @@
 {% load static %}
 
 
+{% block title %} Home {% endblock title %}
+
+
+{% block style_icon %}
+<link rel="shortcut icon" href="{% static 'AppPortfolio/img/logo-2.png' %}" type="image/x-icon">
+<link rel="stylesheet" href=" {% static 'AppPortfolio/css/style.css' %} ">
+{% endblock style_icon %}
+
+
 {% block content %}
 <!-- <header class="header_project">
     <h1></h1>
