@@ -23,9 +23,21 @@
 
     .img-header
         position: relative
-        img
-            width: 80%
-            height: 70%
+
+        .img-box
+            @include position-abs(40%, 40%, -50%, -50%)
+            @extend .flex-center
+            flex-direction: column
+
+            .python
+                height: 20rem
+                width: auto
+                display: inline-block
+
+            .powerbi
+                height: 13rem
+                width: auto
+                display: block
 
 // ###########################################################################################################################
 // Main
@@ -49,12 +61,7 @@
         transform: translate(-50%, -50%)
 
         hr
-            margin: 1.5rem auto
-            max-width: 3.5rem
-            height: 0.2rem
-            background-color: $color3
-            border: none
-            outline: none
+            @include hr-el(1rem, 1.5rem, 3.5rem, $color5)
 
         p
             text-align: justify
@@ -65,18 +72,43 @@
     // Section competence
 // #################################################
 .competence
-    height: 35rem
+    // height: 35rem
     width: 100%
     text-align: center
     background-color: $color4
+    padding: 40px
+    @extend .flex-center
+    flex-direction: column
+
+    hr
+        @include hr-el(1rem, 2rem, 3.5rem, $color3)
+
+    &__container
+        width: 90%
+        @extend .flex-center
+        flex-wrap: wrap
+        // border: 1px solid $color2
+        margin: 0 auto
+        padding: 2rem
+
+        &__box
+            width: 290px
+            // border: 1px solid $color3
+            padding: 1rem
+            margin: 2rem
+
+            img
+                width: 70px
+                height: 70px
+
+            h3
+                padding: 0.1rem 0 0.5rem 0
 
 // #################################################
     // Section projet
 // #################################################
 .projects
-    display: flex
-    justify-content: center
-    align-items: center
+    @extend .flex-center
     flex-direction: column
     padding: 40px
     // border-bottom: 1px solid $color5
@@ -88,10 +120,13 @@
         align-items: center
         flex-direction: column
 
-    h3
-        font-size: 2.5rem
-        color: $color2
-        font-weight: 200px
+        h3
+            font-size: 2.5rem
+            color: $color2
+            font-weight: 200px
+
+    hr
+        @include hr-el(1rem, 1rem, 3.5rem, $color5)
 
     .projet-container
         display: flex

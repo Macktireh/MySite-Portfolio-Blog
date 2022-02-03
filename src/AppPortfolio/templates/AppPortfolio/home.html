@@ -12,26 +12,26 @@
 
 
 {% block content %}
-
 <!-- header -->
 <header class="header-home">
   <div class="container-content">
     <div class="header-content">
       <div>
-        <h1>Dévéloppeur Python & Data Scientist</h1>
+        <h1>Dévéloppeur Python / PowerBI & Data Scientist</h1>
         <h2>Macktireh Abdi Soubaneh</h2>
       </div>
     </div>
   </div>
   <div class="img-header">
-    <img src="{% static 'AppPortfolio/img/code-solid.svg' %}" alt="Python">
-    <!-- <img src="{% static 'AppPortfolio/img/python.png' %}" alt="Python"> -->
+    <div class="img-box">
+      <img class="python" src="{% static 'AppPortfolio/img/python.png' %}">
+      <img class="powerbi" src="{% static 'AppPortfolio/img/PowerBI.png' %}">
+    </div>
   </div>
 </header>
 
 <!-- main -->
 <main>
-
   <!-- presentation -->
   <section class="presentation">
     <div class="container-presntation">
@@ -46,8 +46,46 @@
 
   <!-- Compétence -->
   <section class="competence">
+    <h2>Compétence Développeur</h2>
+    <hr>
     <div class="competence__container">
-      <h2>Compétence Développeur</h2>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/laptop-code-solid.svg' %}">
+        <h3>DÉVELOPPEMENT BACKEND</h3>
+        <p>Développement d'application web Django, Flask, Streamlit, Api Rest</p>
+      </div>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/database-solid.svg' %}">
+        <h3>BASE DE DONNEES</h3>
+        <p>Conception, Administration et Optimisation Mysql, PostgreSQL, SQL Server</p>
+      </div>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/settings.svg' %}">
+        <h3>TRAITEMENT DES DONNEES</h3>
+        <p>Développement d'application web Php, Symfony 2/3/4, Api Rest, CakePhp</p>
+      </div>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/data-analytics1.svg' %}">
+        <h3>DATA ANALYTICS</h3>
+        <p>Analyse de données et mise en place de rapport et de tableau de board Power BI, Power Query</p>
+      </div>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/machine-learning.svg' %}">
+        <h3>MACHINE LEARNING</h3>
+        <p>Développement d'application web Php, Symfony 2/3/4, Api Rest, CakePhp</p>
+      </div>
+
+      <div class="competence__container__box">
+        <img src="{% static 'AppPortfolio/img/docker.svg' %}">
+        <h3>DEVOPS DOCKER</h3>
+        <p>Développement d'application web Django, Flask, Streamlit, Api Rest</p>
+      </div>
+
     </div>
   </section>
 
@@ -56,26 +94,20 @@
     <div class="projet-heading">
       <h3>QUELQUES PROJETS</h3>
     </div>
-
+    <hr>
     <div class="projet-container">
       {% for project in Projects.all %}
       {% if project.status == 'published' %}
-
       {% include 'AppPortfolio/components/card.html' %}
-
-      <script>console.log(" {{ project.title }} ")</script>
       {% endif %}
       {% endfor %}
     </div>
-
     <a href="{% url 'projects' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
-
   </section>
 </main>
-
 {% endblock %}
 
 
 {% block js %}
-<script type="text/javascript" src=" {% static 'AppPortfolio/js/home.js' %} "></script>
+<script type="text/javascript" src=" {% static 'AppPortfolio/js/index.js' %} "></script>
 {% endblock %}

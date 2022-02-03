@@ -1,0 +1,14 @@
+@mixin hr-el($m-t, $m-b, $width, $color)
+    margin: $m-t auto $m-b
+    width: $width
+    max-width: 3.5rem
+    height: 0.2rem
+    background-color: $color
+    border: none
+    outline: none
+
+@mixin position-abs($left, $top, $x, $y)
+    position: absolute
+    left: $left
+    top: $top
+    transform: translate($x, $y)

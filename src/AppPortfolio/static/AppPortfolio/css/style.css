@@ -27,6 +27,17 @@ a:visited {
   color: #f1f1f1;
 }
 
+.flex-center, .projects, .competence__container, .competence, .header-home .img-header .img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn-top {
   display: block;
   width: 50px;
@@ -135,9 +146,22 @@ a:visited {
 .header-home .img-header {
   position: relative;
 }
-.header-home .img-header img {
-  width: 80%;
-  height: 70%;
+.header-home .img-header .img-box {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+}
+.header-home .img-header .img-box .python {
+  height: 20rem;
+  width: auto;
+  display: inline-block;
+}
+.header-home .img-header .img-box .powerbi {
+  height: 13rem;
+  width: auto;
+  display: block;
 }
 
 .presentation {
@@ -155,10 +179,11 @@ a:visited {
   transform: translate(-50%, -50%);
 }
 .presentation .container-presntation hr {
-  margin: 1.5rem auto;
+  margin: 1rem auto 1.5rem;
+  width: 3.5rem;
   max-width: 3.5rem;
   height: 0.2rem;
-  background-color: #f31d58;
+  background-color: #979eaa;
   border: none;
   outline: none;
 }
@@ -169,16 +194,41 @@ a:visited {
 }
 
 .competence {
-  height: 35rem;
   width: 100%;
   text-align: center;
   background-color: #1f1f2e;
+  padding: 40px;
+  flex-direction: column;
+}
+.competence hr {
+  margin: 1rem auto 2rem;
+  width: 3.5rem;
+  max-width: 3.5rem;
+  height: 0.2rem;
+  background-color: #f31d58;
+  border: none;
+  outline: none;
+}
+.competence__container {
+  width: 90%;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.competence__container__box {
+  width: 290px;
+  padding: 1rem;
+  margin: 2rem;
+}
+.competence__container__box img {
+  width: 70px;
+  height: 70px;
+}
+.competence__container__box h3 {
+  padding: 0.1rem 0 0.5rem 0;
 }
 
 .projects {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   padding: 40px;
 }
@@ -188,10 +238,19 @@ a:visited {
   align-items: center;
   flex-direction: column;
 }
-.projects h3 {
+.projects .projet-heading h3 {
   font-size: 2.5rem;
   color: #f1f1f1;
   font-weight: 200px;
+}
+.projects hr {
+  margin: 1rem auto 1rem;
+  width: 3.5rem;
+  max-width: 3.5rem;
+  height: 0.2rem;
+  background-color: #979eaa;
+  border: none;
+  outline: none;
 }
 .projects .projet-container {
   display: flex;
