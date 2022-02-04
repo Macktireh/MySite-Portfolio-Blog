@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="projet-box">
-  <a href="">
+  <a href="{% url 'detail_project' slug=project.slug %}">
     <div class="projet-img">
       <img src="{{ project.image.url }}" alt="{{ project.title }}">
     </div>

@@ -3,14 +3,34 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
 
 
 
 def rename_img(instance, filename):
-    upload_to = 'ProjectsImages/'
+    upload_to = 'image_projet'
     ext = filename.split('.')[-1]
     if instance.slug:
-        filename = f"{instance.niveau}/{instance.slug}_{instance.update_date}.{ext}"
+        if ext in ['jpg', 'jpeg', 'JPG', 'JPEG']:
+            filename = f"jpg/{instance.slug}_{instance.update_date}.{ext}"
+        elif ext in ['png', 'PNG']:
+            filename = f"png/{instance.slug}_{instance.update_date}.{ext}"
+        else:
+            filename = f"auther/{instance.slug}_{instance.update_date}.{ext}"
+    return os.path.join(upload_to, filename)
+
+def rename_file(instance, filename):
+    upload_to = 'image_competence'
+    ext = filename.split('.')[-1]
+    if instance.slug:
+        if ext in ['jpg', 'jpeg', 'JPG', 'JPEG']:
+            filename = f"jpg/{instance.slug}_{instance.update_date}.{ext}"
+        elif ext in ['png', 'PNG']:
+            filename = f"png/{instance.slug}_{instance.update_date}.{ext}"
+        elif ext in ['svg', 'SVG']:
+            filename = f"svg/{instance.slug}_{instance.update_date}.{ext}"
+        else:
+            filename = f"auther/{instance.slug}_{instance.update_date}.{ext}"
     return os.path.join(upload_to, filename)
     
 class Project(models.Model):
@@ -87,4 +107,22 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.category)
         super().save(*args, **kwargs)
+
+
+class Competence(models.Model):
+    title = models.CharField(_('Title'), max_length=100)
+    slug = models.SlugField(max_length=100, blank=True, null=True)
+    description = models.CharField(_('Description'), max_length=128, blank=True, null=True)
+    update_date = models.DateTimeField(auto_now=True, verbose_name='Date de Modification')
+    icon = models.FileField(_('Icon'), upload_to=rename_file, blank=True, null=True)
+    sort_order = models.IntegerField(_('Sort'), unique=True, blank=True, null=True)
     
+    class Meta:
+        ordering = ['sort_order']
+    
+    def __str__(self):
+        return self.title
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)

@@ -49,43 +49,13 @@
     <h2>Compétence Développeur</h2>
     <hr>
     <div class="competence__container">
-
+      {% for competence in Competences.all %}
       <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/laptop-code-solid.svg' %}">
-        <h3>DÉVELOPPEMENT BACKEND</h3>
-        <p>Développement d'application web Django, Flask, Streamlit, Api Rest</p>
+        <img src="{{ competence.icon.url }}" alt="{{ competence.title }}">
+        <h3>{{ competence.title }}</h3>
+        <p>{{ competence.description }}</p>
       </div>
-
-      <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/database-solid.svg' %}">
-        <h3>BASE DE DONNEES</h3>
-        <p>Conception, Administration et Optimisation Mysql, PostgreSQL, SQL Server</p>
-      </div>
-
-      <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/settings.svg' %}">
-        <h3>TRAITEMENT DES DONNEES</h3>
-        <p>Développement d'application web Php, Symfony 2/3/4, Api Rest, CakePhp</p>
-      </div>
-
-      <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/data-analytics1.svg' %}">
-        <h3>DATA ANALYTICS</h3>
-        <p>Analyse de données et mise en place de rapport et de tableau de board Power BI, Power Query</p>
-      </div>
-
-      <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/machine-learning.svg' %}">
-        <h3>MACHINE LEARNING</h3>
-        <p>Développement d'application web Php, Symfony 2/3/4, Api Rest, CakePhp</p>
-      </div>
-
-      <div class="competence__container__box">
-        <img src="{% static 'AppPortfolio/img/docker.svg' %}">
-        <h3>DEVOPS DOCKER</h3>
-        <p>Développement d'application web Django, Flask, Streamlit, Api Rest</p>
-      </div>
-
+      {% endfor %}
     </div>
   </section>
 
@@ -102,7 +72,7 @@
       {% endif %}
       {% endfor %}
     </div>
-    <a href="{% url 'projects' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
+    <a href="{% url 'project' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
   </section>
 </main>
 {% endblock %}

@@ -1,7 +1,7 @@
 from csv import list_dialects
 from django.contrib import admin
 
-from AppPortfolio.models import Category, Project
+from AppPortfolio.models import Category, Competence, Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -64,5 +64,29 @@ class CategoryAdmin(admin.ModelAdmin):
     
     prepopulated_fields = {'slug': ('category',)}
     
-
 admin.site.register(Category, CategoryAdmin)
+
+
+class CompetenceAdmin(admin.ModelAdmin):
+    list_display = (
+        'update_date',
+        'sort_order',
+        'title',
+        'description',
+        'icon',
+    )
+    
+    search_fields = (
+        'title',
+    )
+    
+    list_editable = (
+        'sort_order',
+        'title',
+        'description',
+        'icon',
+    )
+    
+    prepopulated_fields = {'slug': ('title',)}
+    
+admin.site.register(Competence, CompetenceAdmin)
