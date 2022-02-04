@@ -1,7 +1,7 @@
 // Navbar avec logo
 .nav-bar
     opacity: 1
-    height: 100px
+    height: 80px
     width: 100%
     flex: 1 0 auto
     display: flex
@@ -34,39 +34,89 @@
         //     background-color: $color3
         //     border-radius: 50%
 
-    ul
+    .nav-menu
         list-style-type: none
         display: flex
-        margin-right: 50px
-        padding: 0
+        margin-right: 2rem
+        gap: 25px
 
         .nav-item
             display: inline
             position: relative
             cursor: pointer
-            padding: 0 1rem
+            // padding: 0 1rem
             font-size: 25px
             transition: 0.3s
             border-radius: 8px
 
-            a
-                color: $color2
-                text-align: center
-                text-decoration: none
+.nav-link
+    color: $color2
+    text-align: center
+    transition: 0.3s ease-out
 
-                &::before
-                    content: ""
-                    display: block
-                    position: absolute
-                    left: 50%
-                    top: 35px
-                    transform: translateX(-50%) scale(0)
-                    height: 3px
-                    width: 65%
-                    transition: 0.3s ease
-                    background-color: $color3
-                    border-radius: 8px
-                    text-shadow: 4px 4px 4px $color3
+    // &::before
+    //     content: ""
+    //     display: block
+    //     position: absolute
+    //     left: 50%
+    //     top: 35px
+    //     transform: translateX(-50%) scale(0)
+    //     height: 3px
+    //     width: 90%
+    //     transition: 0.3s ease
+    //     background-color: $color3
+    //     border-radius: 8px
+    //     text-shadow: 4px 4px 4px $color3
 
-                &:hover::before
-                    transform: translateX(-50%) scale(1)
+    &:hover
+        transform: translateX(-50%) scale(1)
+        color: $color3
+
+.hamburger
+    display: none
+    cursor: pointer
+    // background-color: $color3
+    margin-right: 2rem
+    &__bar
+        background-color: $color2
+        display: block
+        width: 28px
+        height: 4px
+        margin: 5px auto
+        -webkit-transition: all 0.3s ease-in-out
+        transition: all 0.3s ease-in-out
+        border-radius: 8px
+
+@media screen and (max-width:768px)
+    .hamburger
+        display: block
+        // background-color: $color3
+
+    .hamburger.active .hamburger__bar:nth-child(2)
+        opacity: 0
+    .hamburger.active .hamburger__bar:nth-child(1)
+        transform: translateY(8px) rotate(45deg)
+    .hamburger.active .hamburger__bar:nth-child(3)
+        transform: translateY(-8px) rotate(-45deg)
+
+    .nav-menu
+        margin-right: 0
+        position: fixed
+        background-color: $color4
+        left: -100%
+        top: 70px
+        gap: 0
+        flex-direction: column
+        width: 100%
+        text-align: center
+        transition: 0.3s
+        z-index: 1000
+
+    .nav-item
+        margin: 10px 0
+
+    .nav-menu.active
+        left: 0
+
+    .nav-link.active
+        color: $color3
