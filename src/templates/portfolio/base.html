@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %}</title>
+  {% block style_icon %}{% endblock style_icon %}
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="nav-bar">
+    {% include 'portfolio/components/navbar.html' %}
+  </nav>
+
+  <!-- Content = header + main -->
+  {% block content %}{% endblock content %}
+
+  <aside>
+    {% include 'portfolio/components/arrow-up.html' %}
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    {% include 'portfolio/components/footer.html' %}
+  </footer>
+
+  <!-- JS -->
+  {% block js %}{% endblock %}
+</body>
+
+</html>

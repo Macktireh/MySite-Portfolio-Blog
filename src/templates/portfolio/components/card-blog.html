@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="projet-box">
+  <a href="{% url 'detail_project' slug=project.slug %}">
+    <div class="projet-img">
+      <img src="{{ project.image.url }}" alt="{{ project.title }}">
+    </div>
+
+    <div class="projet-text">
+      <span>{{ project.published_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
+      <h5 class="projet-title">{{ project.title }}</h5>
+      <p class="intro">
+        {{ project.introduction }}.
+      </p>
+    </div>
+    <div class="card-contenaire">
+      <div class="card-botton">
+        <div class="box-level">
+          <img src=" {% static 'portfolio/img/level.svg' %} " alt="Icon Niveau">
+          <p class="p-level">Niveau: {{ project.niveau }}</p>
+        </div>
+
+        <div class="box-like">
+          <img src=" {% static 'portfolio/img/like.svg' %} " alt="Icon like">
+          <p class="p-count-like">6</p>
+        </div>
+
+        <div class="box-comment">
+          <img src=" {% static 'portfolio/img/comment.svg' %} " alt="Icon comment">
+          <p class="p-count-comment">4</p>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

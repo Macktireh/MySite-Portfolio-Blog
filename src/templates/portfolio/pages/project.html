@@ -1,0 +1,39 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+
+{% block title %} Project {% endblock title %}
+
+
+{% block style_icon %}
+<link rel="shortcut icon" href="{% static 'portfolio/img/logo-2.png' %}" type="image/x-icon">
+<link rel="stylesheet" href=" {% static 'portfolio/css/style.css' %} ">
+{% endblock style_icon %}
+
+
+{% block content %}
+<main>
+  <section class="projects">
+    <div class="projet-heading">
+      <h3>TOUS LES PROJETS</h3>
+    </div>
+    <div class="projet-container">
+      {% for project in Projects.all %}
+      {% if project.status == 'published' %}
+      {% include 'portfolio/components/card-project.html' %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Recherche et filtre -->
+  <aside>
+    <div class="filter-contenaire">
+    </div>
+  </aside>
+</main>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src=" {% static 'portfolio/js/index.js' %} "></script>
+{% endblock %}
