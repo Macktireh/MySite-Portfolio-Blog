@@ -1,0 +1,92 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+
+{% block title %} Contact {% endblock title %}
+
+
+{% block style_icon %}
+<link rel="shortcut icon" href="{% static 'portfolio/img/logo-2.png' %}" type="image/x-icon">
+<link rel="stylesheet" href=" {% static 'portfolio/css/style.css' %} ">
+{% endblock style_icon %}
+
+
+{% block content %}
+
+
+<main class="contact">
+  <div class="contact-container">
+    <section class="section-info">
+      <div class="header-content">
+        <h1>CONTACT</h1>
+        <hr>
+        <p>{% lorem 10 w %}</p>
+      </div>
+
+      <div class="contact-img">
+        <img src="{% static 'portfolio/img/contact.png' %}" alt="Contact">
+      </div>
+
+      <div class="box-info">
+        <div class="info">
+          <div class="info-icon">
+            <img src="{% static 'portfolio/img/email.svg' %}" alt="Email">
+          </div>
+          <div class="info-text">
+            <!-- <h3>Email</h3> -->
+            <p>mack.abdisoubaneh@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="info-icon">
+            <img src="{% static 'portfolio/img/phone.svg' %}" alt="phone">
+          </div>
+          <div class="info-text">
+            <!-- <h3>Téléphone</h3> -->
+            <p>07 58 86 26 10</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-forms">
+      <form action="">
+        <div class="name-container">
+          <label for="name">Nom</label>
+          <input type="text" autocomplete="off" id="name">
+          <span></span>
+        </div>
+
+        <div class="email-container">
+          <label for="email">Email</label>
+          <input type="email" autocomplete="off" id="email">
+          <span>Email incorrect</span>
+        </div>
+
+        <div class="message-container">
+          <label for="message">Mot de passe</label>
+          <textarea name="" id="message" cols="30" rows="10"></textarea>
+          <!-- <input type="text" autocomplete="off" id="message"> -->
+          <!-- <p id="progress-bar"></p> -->
+          <span></span>
+        </div>
+
+        <!-- <div class="confirm-container">
+          <label for="confirm">Confirmer mot de passe</label>
+          <input type="password" autocomplete="off" id="confirm">
+          <span></span>
+        </div> -->
+
+        <input type="submit" value="Valider">
+      </form>
+    </section>
+  </div>
+</main>
+{% endblock content %}
+
+
+{% block js %}
+<script type="text/javascript" src=" {% static 'portfolio/js/index.js' %} "></script>
+<script type="text/javascript" src=" {% static 'portfolio/js/contact.js' %} "></script>
+{% endblock %}

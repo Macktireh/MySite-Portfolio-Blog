@@ -37,10 +37,7 @@
     <div class="container-presntation">
       <h2>Développeur Python | Data Scientist | Expert Power BI</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, totam alias eos quia obcaecati repellendus
-        possimus, reiciendis tempora dolore tempore nulla cupiditate officia deserunt soluta! Accusamus corrupti commodi
-        enim dolor explicabo esse quidem, eligendi numquam minus magnam ab provident mollitia ad sint vitae molestias,
-        tempora debitis laudantium excepturi ipsum deleniti.</p>
+      <p>{% lorem 60 w %}</p>
     </div>
   </section>
 
@@ -72,7 +69,7 @@
       {% endif %}
       {% endfor %}
     </div>
-    <a href="{% url 'project' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
+    <a href="{% url 'projects' %}" class="btn-all-project">VOIR TOUS LES PROJETS</a>
   </section>
 </main>
 {% endblock %}

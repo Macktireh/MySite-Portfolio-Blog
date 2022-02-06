@@ -1,11 +1,14 @@
 @import "./settings";
-@import "./placehoder.sass";
-@import "./mixins.sass";
-@import "./global.sass";
+@import "./placehoder";
+@import "./mixins";
+@import "./global";
 
 @import "./components/navigation";
+@import "./components/card-project";
 
 @import "./pages/home";
-@import "./components/card-project";
+@import "./pages/project";
+@import "./pages/detail-project";
+@import "./pages/contact";
 
 @import "./components/footer";

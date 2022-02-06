@@ -1,0 +1,186 @@
+.contact
+    padding: 3rem 0
+    @extend .flex-center
+    background-color: $color4
+
+.contact-container
+    width: 90%
+    max-width: 1200px
+    display: grid
+    grid-template-columns: 50% 50%
+    padding: 2.5rem
+    border-radius: 8px
+    // box-shadow: 0 0 2px $color5
+
+.section-info
+    // @extend .flex-center
+    text-align: center
+    width: 90%
+    min-width: 400px
+    max-width: 600px
+
+    .header-content
+        width: 80%
+        margin: 1.5rem auto
+
+        hr
+            @include hr-el(0.8rem, 1.5rem, 2rem, $color3)
+        p
+            @include p-el(center, 140%, 16px)
+    .contact-img
+        width: 80%
+        margin: 0 auto
+        img
+            width: 100%
+
+    .box-info
+        width: 80%
+        margin: 1.5rem auto
+        // @include flex-el(space-around, center)
+        @extend .flex-column
+        flex-wrap: wrap
+
+        .info
+            @include flex-el(flex-start, center)
+            margin-top: 0.8rem
+
+            .info-icon
+                img
+                    width: 30px
+                    height: 30px
+            .info-text
+                margin-left: 0.5rem
+                p
+                    @include p-el(center, 140%, 14px)
+
+.section-forms
+    @extend .flex-center
+
+    form
+        width: 90%
+        min-width: 320px
+        max-width: 600px
+        // background: white
+        display: grid
+        grid-template-rows: repeat(3, 104px)
+        padding: 60px 45px 30px
+        border-radius: 16px
+        box-shadow: 0 1px 4px $color5
+        position: relative
+
+        &::after
+            content: ""
+            position: absolute
+            width: 60px
+            height: 60px
+            border-radius: 150px
+            background: linear-gradient(65deg, $color3, #f85a87)
+            top: -30px
+            left: 50%
+            transform: translateX(-50%)
+            box-shadow: 0 1px 4px $color5
+
+        div
+            transition: 0.2s
+
+        label
+            letter-spacing: 1px
+
+        input[type="text"],
+        input[type="email"],
+        textarea
+            margin: 7px 0 7px
+            border: 1px solid transparent
+            background: $color5
+            height: 36px
+            width: 100%
+            box-shadow: 0 1px 2px $color5
+            border-radius: 9px
+            font-size: 1.1rem
+            padding: 10px
+            transition: 0.2s
+
+        .message-container
+            height: 200px
+            textarea
+                height: 80%
+                resize: none
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus
+            border: 1px solid $color2
+
+        span
+            margin-bottom: 20px
+            display: block
+            font-size: 0.8rem
+            visibility: hidden
+            opacity: 0
+            transition: 0.3s
+            color: red
+
+        p
+            background: red
+            width: 33%
+            height: 6px
+            margin: -2px 0 2px
+            border-radius: 50px
+            visibility: hidden
+            transition: 0.3s
+
+        #security span
+            display: inline
+
+        input[type="submit"]
+            border: none
+            background: linear-gradient(65deg, $color3, #f85a87)
+            width: 50%
+            height: 36px
+            margin: 9rem auto 0
+            padding: 10px
+            border-radius: 150px
+            font-size: 1.2rem
+            box-shadow: 0 1px 8px $color5
+            cursor: pointer
+            transition: 0.3s ease
+
+        input[type="submit"]:hover
+            filter: brightness(105%)
+            transform: translateX(2px)
+
+        .error input[type="text"], .error input[type="email"]
+            color: red
+            border: 1px solid rgba(255, 0, 0, 0.527)
+
+        .error textarea
+            color: red
+            border: 1px solid rgba(255, 0, 0, 0.527)
+
+        .error span
+            visibility: visible
+            opacity: 1
+            color: red
+
+        // .progressRed
+        //     background: red
+        //     width: 33%
+        //     visibility: visible
+
+        // .progressBlue
+        //     background: #16d9e7
+        //     width: 67%
+        //     visibility: visible
+
+        // .progressGreen
+        //     width: 100%
+        //     background: $color6
+        //     visibility: visible
+
+@media screen and (max-width:980px)
+    .contact-container
+        @include flex-el(center, center)
+        flex-direction: column
+
+        .section-forms
+            margin-top: 2rem

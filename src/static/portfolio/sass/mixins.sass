@@ -12,3 +12,13 @@
     left: $left
     top: $top
     transform: translate($x, $y)
+
+@mixin p-el($align, $espace, $size)
+    text-align: $align
+    line-height: $espace
+    font-size: $size
+
+@mixin flex-el($jc, $at)
+    display: flex
+    justify-content: $jc
+    align-items: $at

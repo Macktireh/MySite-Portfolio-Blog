@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Project, Competence
 
-
+# view home
 def home(request):
     
     # récuperer toutes les données depuis la base de données
@@ -20,6 +20,7 @@ def home(request):
     return render(request, template, contexte)
 
 
+# view project
 def project(request):
     
     # récuperer toutes les données depuis la base de données
@@ -36,6 +37,7 @@ def project(request):
     return render(request, template, contexte)
 
 
+# view detail project
 def detail_project(request, slug):
     
     # récuperer toutes les données depuis la base de données
@@ -48,5 +50,19 @@ def detail_project(request, slug):
     
     # le schema du document à rendre ou afficher 
     template = 'portfolio/pages/detail_project.html'
+    
+    return render(request, template, contexte)
+
+
+# view Contact
+def contact(request):
+    
+    # contexte : passer les données au gabarite de django
+    contexte = {
+
+    }
+    
+    # le schema du document à rendre ou afficher 
+    template = 'portfolio/pages/contact.html'
     
     return render(request, template, contexte)
