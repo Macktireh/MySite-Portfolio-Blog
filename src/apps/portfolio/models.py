@@ -126,3 +126,16 @@ class Competence(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+        
+        
+class Contact(models.Model):
+    name = models.CharField(verbose_name='Name', max_length=30)
+    email = models.EmailField(verbose_name='Adress Email', unique=True)
+    # date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
+    message = models.TextField(verbose_name='Message', max_length=5000)
+    
+    # class Meta:
+    #     ordering = ['-date']
+    
+    def __str__(self):
+        return self.name

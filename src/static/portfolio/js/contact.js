@@ -59,7 +59,7 @@ const messageChecker = (value) => {
 
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
-    switch (e.target.id) {
+    switch (e.target.name) {
       case "name":
         nameChecker(e.target.value);
         break;
@@ -75,25 +75,25 @@ inputs.forEach((input) => {
   });
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   // e.preventDefault();
 
-  if (name && email && message) {
-    const data = {
-      name,
-      email,
-      message,
-    };
-    console.log(data);
+//   if (name && email && message) {
+//     const data = {
+//       name,
+//       email,
+//       message,
+//     };
+//     console.log(data);
 
-    inputs.forEach((input) => (input.value = ""));
-    // progressBar.classList = "";
+//     // inputs.forEach((input) => (input.value = ""));
+//     // progressBar.classList = "";
 
-    name = null;
-    email = null;
-    message = null;
-    alert("Inscription validée !");
-  } else {
-    alert("veuillez remplir correctement les champs");
-  }
-});
+//     name = null;
+//     email = null;
+//     message = null;
+//     // alert("Inscription validée !");
+//   } else {
+//     alert("veuillez remplir correctement les champs");
+//   }
+// });

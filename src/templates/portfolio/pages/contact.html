@@ -51,32 +51,28 @@
     </section>
 
     <section class="section-forms">
-      <form action="">
+      <form action="" method="POST">
+        {% csrf_token %}
         <div class="name-container">
           <label for="name">Nom</label>
-          <input type="text" autocomplete="off" id="name">
+          <!-- <input type="text" autocomplete="off" id="name"> -->
+          {{ forms.name }}
           <span></span>
         </div>
 
         <div class="email-container">
           <label for="email">Email</label>
-          <input type="email" autocomplete="off" id="email">
+          <!-- <input type="email" autocomplete="off" id="email"> -->
+          {{ forms.email }}
           <span>Email incorrect</span>
         </div>
 
         <div class="message-container">
           <label for="message">Mot de passe</label>
-          <textarea name="" id="message" cols="30" rows="10"></textarea>
-          <!-- <input type="text" autocomplete="off" id="message"> -->
-          <!-- <p id="progress-bar"></p> -->
+          <!-- <textarea name="" id="message" cols="30" rows="10"></textarea> -->
+          {{ forms.message }}
           <span></span>
         </div>
-
-        <!-- <div class="confirm-container">
-          <label for="confirm">Confirmer mot de passe</label>
-          <input type="password" autocomplete="off" id="confirm">
-          <span></span>
-        </div> -->
 
         <input type="submit" value="Valider">
       </form>

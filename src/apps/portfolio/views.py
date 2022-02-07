@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from .models import Project, Competence
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from .models import Contact, Project, Competence
+from .forms import ContactForm
 
 # view home
 def home(request):
@@ -57,12 +59,44 @@ def detail_project(request, slug):
 # view Contact
 def contact(request):
     
+    # contacts = Contact.objects.all()
+    
+    if request.method == 'POST':
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            # name = form.cleaned_data['name']
+            # adress_email = form.cleaned_data['adress_email']
+            # message = form.cleaned_data['message']
+            # p = Contact(name=name,
+            #             adress_email=adress_email,
+            #             message=message
+            #         )
+            # p.save()
+            return redirect('thank_you')
+    
+    else:
+        form = ContactForm()
     # contexte : passer les données au gabarite de django
     contexte = {
-
+        'forms': form    
     }
     
     # le schema du document à rendre ou afficher 
     template = 'portfolio/pages/contact.html'
+    
+    return render(request, template, contexte)
+
+
+def merci(request):
+    
+    contacts = Contact.objects.all()
+    
+    contexte = {
+        'contacts': contacts    
+    }
+    
+    # le schema du document à rendre ou afficher 
+    template = 'portfolio/pages/thanks.html'
     
     return render(request, template, contexte)

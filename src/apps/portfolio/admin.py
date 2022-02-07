@@ -1,7 +1,7 @@
 from csv import list_dialects
 from django.contrib import admin
 
-from .models import Category, Competence, Project
+from .models import Category, Competence, Contact, Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -90,3 +90,18 @@ class CompetenceAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     
 admin.site.register(Competence, CompetenceAdmin)
+
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'email',
+        'message',
+    )
+    
+    search_fields = (
+        'name',
+        'email',
+    )
+    
+admin.site.register(Contact, ContactAdmin)
