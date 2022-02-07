@@ -100,3 +100,11 @@ def merci(request):
     template = 'portfolio/pages/thanks.html'
     
     return render(request, template, contexte)
+
+
+def blog(request):
+
+    # le schema du document à rendre ou afficher 
+    template = 'portfolio/pages/blog.html'
+    
+    return render(request, template)

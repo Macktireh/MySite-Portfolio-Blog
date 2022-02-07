@@ -19,7 +19,7 @@ a:visited {
   color: #f1f1f1;
 }
 
-.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .header-home .img-header .img-box, .nav-bar .logo {
+.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .blog, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .header-home .img-header .img-box, .nav-bar .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,6 +396,11 @@ body {
   color: #f1f1f1;
   border: 1px solid #f1f1f1;
   border-radius: 5px;
+}
+
+.blog {
+  height: 30rem;
+  background-color: #1f1f2e;
 }
 
 .contact {
