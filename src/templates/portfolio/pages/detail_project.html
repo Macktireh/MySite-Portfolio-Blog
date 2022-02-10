@@ -7,17 +7,27 @@
 
 {% block style_icon %}
 <link rel="shortcut icon" href="{% static 'portfolio/img/logo-2.png' %}" type="image/x-icon">
-<link rel="stylesheet" href=" {% static 'portfolio/css/style.css' %} ">
+<link rel="stylesheet" href=" {% static 'portfolio/css/cleanStyles/style.css' %} ">
 {% endblock style_icon %}
 
 
 {% block content %}
 <!-- main -->
-<main>
-  <h5 class="projet-title">{{ Project.title }}</h5>
-  <strong>{{ Project.published_date|date:"d/m/Y" }} | par {{ Project.author.first_name }}</strong>
-  <p class="intro">{{ Project.body }}</p>
-</main>
+<div class="blog">
+  <div>
+    <h5 class="projet-title">{{ Project.title }}</h5>
+    <strong>{{ Project.published_date|date:"d/m/Y" }} | par {{ Project.author.first_name }}</strong>
+    <p class="intro">{{ Project.body|safe }}</p>
+  </div>
+</div>
+
+<!-- <main class="detail-product">
+  <div class"detail-product-container>
+    <h5 class="projet-title">{{ Project.title }}</h5>
+    <strong>{{ Project.published_date|date:"d/m/Y" }} | par {{ Project.author.first_name }}</strong>
+    <p class="intro">{{ Project.body|safe }}</p>
+  </div>
+</main> -->
 {% endblock %}
 
 

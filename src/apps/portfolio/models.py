@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-
+from ckeditor.fields import RichTextField
 
 
 def rename_img(instance, filename):
@@ -65,7 +65,8 @@ class Project(models.Model):
     introduction = models.TextField(verbose_name='Introduction')
     
     # Champ body c'est à dire le contenu et le dédail du projet
-    body = models.TextField(blank=True)
+    # body = models.TextField(blank=True)
+    body = RichTextField(blank=True, null=True)
     
     # Champ image du projet
     image = models.ImageField(upload_to=rename_img)
@@ -111,10 +112,15 @@ class Category(models.Model):
 
 class Competence(models.Model):
     title = models.CharField(_('Title'), max_length=100)
+    
     slug = models.SlugField(max_length=100, blank=True, null=True)
+    
     description = models.CharField(_('Description'), max_length=128, blank=True, null=True)
+    
     update_date = models.DateTimeField(auto_now=True, verbose_name='Date de Modification')
+    
     icon = models.FileField(_('Icon'), upload_to=rename_file, blank=True, null=True)
+    
     sort_order = models.IntegerField(_('Sort'), unique=True, blank=True, null=True)
     
     class Meta:
@@ -131,11 +137,11 @@ class Competence(models.Model):
 class Contact(models.Model):
     name = models.CharField(verbose_name='Name', max_length=30)
     email = models.EmailField(verbose_name='Adress Email', unique=True)
-    # date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
-    message = models.TextField(verbose_name='Message', max_length=5000)
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
+    message = models.TextField(verbose_name='Message', max_length=10000)
     
-    # class Meta:
-    #     ordering = ['-date']
+    class Meta:
+        ordering = ['-date']
     
     def __str__(self):
         return self.name

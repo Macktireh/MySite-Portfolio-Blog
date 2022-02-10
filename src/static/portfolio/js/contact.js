@@ -79,21 +79,20 @@ inputs.forEach((input) => {
 //   // e.preventDefault();
 
 //   if (name && email && message) {
-//     const data = {
-//       name,
-//       email,
-//       message,
-//     };
-//     console.log(data);
-
+//     // const data = {
+//     //   name,
+//     //   email,
+//     //   message,
+//     // };
+//     // console.log(data);
 //     // inputs.forEach((input) => (input.value = ""));
 //     // progressBar.classList = "";
-
-//     name = null;
-//     email = null;
-//     message = null;
+//     // name = null;
+//     // email = null;
+//     // message = null;
 //     // alert("Inscription validée !");
 //   } else {
+//     e.preventDefault();
 //     alert("veuillez remplir correctement les champs");
 //   }
 // });

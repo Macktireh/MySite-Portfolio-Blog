@@ -6,10 +6,6 @@
   outline: none;
 }
 
-ul {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
   color: #f1f1f1;
@@ -25,7 +21,7 @@ a:visited {
   align-items: center;
 }
 
-.flex-column, .section-info .box-info {
+.flex-column, .section-forms form, .section-info .box-info {
   display: flex;
   flex-direction: column;
 }
@@ -398,8 +394,17 @@ body {
   border-radius: 5px;
 }
 
+main .detail-product-container {
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+}
+
 .blog {
   height: 30rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5rem;
   background-color: #1f1f2e;
 }
 
@@ -476,8 +481,6 @@ body {
   width: 90%;
   min-width: 320px;
   max-width: 600px;
-  display: grid;
-  grid-template-rows: repeat(3, 104px);
   padding: 60px 45px 30px;
   border-radius: 16px;
   box-shadow: 0 1px 4px #979eaa;
@@ -515,12 +518,9 @@ body {
   padding: 10px;
   transition: 0.2s;
 }
-.section-forms form .message-container {
-  height: 200px;
-}
 .section-forms form .message-container textarea {
-  height: 80%;
-  resize: none;
+  height: 200px;
+  resize: vertical;
 }
 .section-forms form input[type=text]:focus,
 .section-forms form input[type=email]:focus,
@@ -553,7 +553,7 @@ body {
   background: linear-gradient(65deg, #f31d58, #f85a87);
   width: 50%;
   height: 36px;
-  margin: 9rem auto 0;
+  margin: 2rem auto 0;
   padding: 10px;
   border-radius: 150px;
   font-size: 1.2rem;
@@ -620,6 +620,7 @@ footer .footer-content .footer-content-box .footer-logo img {
   height: auto;
 }
 footer .footer-content .footer-content-box ul {
+  list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;

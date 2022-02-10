@@ -61,8 +61,9 @@
         min-width: 320px
         max-width: 600px
         // background: white
-        display: grid
-        grid-template-rows: repeat(3, 104px)
+        // display: grid
+        // grid-template-rows: repeat(3, 104px)
+        @extend .flex-column
         padding: 60px 45px 30px
         border-radius: 16px
         box-shadow: 0 1px 4px $color5
@@ -101,10 +102,10 @@
             transition: 0.2s
 
         .message-container
-            height: 200px
+            // height: 200px
             textarea
-                height: 80%
-                resize: none
+                height: 200px
+                resize: vertical
 
         input[type="text"]:focus,
         input[type="email"]:focus,
@@ -137,7 +138,7 @@
             background: linear-gradient(65deg, $color3, #f85a87)
             width: 50%
             height: 36px
-            margin: 9rem auto 0
+            margin: 2rem auto 0
             padding: 10px
             border-radius: 150px
             font-size: 1.2rem
