@@ -2,24 +2,17 @@
 {% load static %}
 
 
-{% block title %} Home {% endblock title %}
-
-
-{% block style_icon %}
-<link rel="shortcut icon" href="{% static 'portfolio/img/logo-2.png' %}" type="image/x-icon">
-<link rel="stylesheet" href=" {% static 'portfolio/css/cleanStyles/style.css' %} ">
-{% endblock style_icon %}
+{% block title %} Blog {% endblock title %}
 
 
 {% block content %}
-<main>
-    <div class="blog">
-        <h1>LE BLOG</h1>
-    </div>
+<main class="main-blog">
+  <div class="blog">
+    <h2>Bientôt disponible les articles</h2>
+  </div>
 </main>
 {% endblock %}
 
 
 {% block js %}
-<script type="text/javascript" src=" {% static 'portfolio/js/index.js' %} "></script>
 {% endblock %}

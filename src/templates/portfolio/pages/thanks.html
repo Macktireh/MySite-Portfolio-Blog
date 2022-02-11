@@ -2,26 +2,16 @@
 {% load static %}
 
 
-{% block title %} Merci de m'avoir contact je reviendrai vers vous dans le plus bref delai {% endblock title %}
-
-
-{% block style_icon %}
-<link rel="shortcut icon" href="{% static 'portfolio/img/logo-2.png' %}" type="image/x-icon">
-<link rel="stylesheet" href=" {% static 'portfolio/css/cleanStyles/style.css' %} ">
-{% endblock style_icon %}
+{% block title %} Merci pour votre message {% endblock title %}
 
 
 {% block content %}
 <main>
-    <div class="thanks-container">
-        <h1>
-            MERCI pour votre message.
-        </h1>
-    </div>
+  <div class="thanks-container">
+    <h1>MERCI pour votre message.</h1>
+  </div>
 </main>
 {% endblock content %}
 
 
-{% block js %}
-<script type="text/javascript" src=" {% static 'portfolio/js/index.js' %} "></script>
-{% endblock %}
+{% block js %} {% endblock %}
