@@ -35,7 +35,7 @@ const nameChecker = (value) => {
 };
 
 const emailChecker = (value) => {
-  if (!value.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
+  if (!value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/)) {
     errorDisplay("email", "Le mail n'est pas valide");
     email = null;
   } else {
