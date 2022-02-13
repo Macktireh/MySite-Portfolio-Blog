@@ -6,13 +6,13 @@ from .models import Category, Competence, Contact, Project
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = (
-        'create_date',
-        'title',
         'nom_du_auteur',
+        'title',
         'niveau',
         'technology',
         'favorites',
         'status',
+        'number_views',
         'published_date',
         'update_date',
     )

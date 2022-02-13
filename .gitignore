@@ -8,3 +8,4 @@ media
 migrations
 info.txt
 node_modules
+emails.py

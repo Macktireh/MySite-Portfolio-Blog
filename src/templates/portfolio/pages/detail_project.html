@@ -2,7 +2,7 @@
 {% load static %}
 
 
-{% block title %} Project : {{ Project.title }}{% endblock title %}
+{% block title %} Project: {{ Project.title }} {% endblock title %}
 
 
 {% block content %}
@@ -10,7 +10,11 @@
 <div class="blog">
   <div>
     <h5 class="projet-title">{{ Project.title }}</h5>
-    <strong>{{ Project.published_date|date:"d/m/Y" }} | par {{ Project.author.first_name }}</strong>
+    <strong>
+      {{ Project.published_date|date:"d/m/Y" }} |
+      par {{ Project.author.first_name }} |
+      vue {{ Project.number_views }}
+    </strong>>
     <p class="intro">{{ Project.body|safe }}</p>
   </div>
 </div>
@@ -25,5 +29,4 @@
 {% endblock %}
 
 
-{% block js %}
-{% endblock %}
+{% block js %} {% endblock %}

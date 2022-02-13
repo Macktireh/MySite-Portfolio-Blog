@@ -20,14 +20,15 @@
           <p class="p-level">Niveau: {{ project.niveau }}</p>
         </div>
 
-        <div class="box-like">
+        <!-- <div class="box-like">
           <img src=" {% static 'portfolio/img/like.svg' %} " alt="Icon like">
           <p class="p-count-like">6</p>
-        </div>
+        </div> -->
 
         <div class="box-comment">
-          <img src=" {% static 'portfolio/img/comment.svg' %} " alt="Icon comment">
-          <p class="p-count-comment">4</p>
+          <img src=" {% static 'portfolio/img/eye.svg' %} " alt="Icon comment">
+          <!-- <img src=" {% static 'portfolio/img/comment.svg' %} " alt="Icon comment"> -->
+          <p class="p-count-comment">{{ project.number_views }}</p>
         </div>
       </div>
     </div>

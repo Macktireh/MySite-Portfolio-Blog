@@ -15,7 +15,7 @@ a:visited {
   color: #f1f1f1;
 }
 
-.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .main-blog .blog, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .header-home .img-header .img-box, .nav-bar .logo {
+.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .main-blog .blog, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .header-home .img-header .img-box, .projet-box .card-contenaire .card-botton .box-level, .projet-box .card-contenaire .card-botton .box-like, .projet-box .card-contenaire .card-botton .box-comment, .nav-bar .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,12 +175,13 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 2px #979eaa;
   transition: 0.3s ease-in-out;
-  transform: scale(1);
+  transform: scale(0.99);
   display: flex;
   flex-direction: column;
 }
 .projet-box:hover {
   box-shadow: 0 0 10px #979eaa;
+  transform: scale(1);
 }
 .projet-box .projet-img {
   width: 100%;
@@ -236,15 +237,13 @@ body {
 }
 .projet-box .card-contenaire .card-botton {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 1.4rem;
   color: #979eaa;
 }
 .projet-box .card-contenaire .card-botton .box-level, .projet-box .card-contenaire .card-botton .box-like, .projet-box .card-contenaire .card-botton .box-comment {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .projet-box .card-contenaire .card-botton .box-level img, .projet-box .card-contenaire .card-botton .box-like img, .projet-box .card-contenaire .card-botton .box-comment img {
   margin: 0;
@@ -285,12 +284,12 @@ body {
   flex-direction: column;
 }
 .header-home .img-header .img-box .python {
-  height: 20rem;
+  height: 5rem;
   width: auto;
   display: inline-block;
 }
 .header-home .img-header .img-box .powerbi {
-  height: 13rem;
+  height: 3rem;
   width: auto;
   display: block;
 }
@@ -405,9 +404,8 @@ main .detail-product-container {
 }
 .main-blog .blog {
   height: 30rem;
-  width: 50%;
-  margin: 0 auto;
-  padding: 5rem;
+  text-align: center;
+  padding-bottom: 4rem;
 }
 
 .contact {
@@ -480,9 +478,9 @@ main .detail-product-container {
 }
 
 .section-forms form {
-  width: 90%;
+  width: 100%;
   min-width: 320px;
-  max-width: 600px;
+  max-width: 800px;
   padding: 60px 45px 30px;
   border-radius: 16px;
   box-shadow: 0 1px 4px #979eaa;

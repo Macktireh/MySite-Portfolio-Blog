@@ -34,6 +34,8 @@ def project(request):
 # view detail project
 def detail_project(request, slug):
     project = Project.objects.get(slug=slug)
+    project.number_views = project.number_views + 1
+    project.save()
     contexte = {
         'Project': project,
     }
@@ -66,7 +68,7 @@ FROM :
 {name}
 {email}
 
-Date : 
+DATE : 
 {date_send}
             """
             send_mail(
@@ -77,7 +79,7 @@ Date :
             )
             
             form.save()
-            return redirect('thank_you')
+            return redirect('tkank_you_for_your_message')
     
     else:
         form = ContactForm()
@@ -88,10 +90,14 @@ Date :
     return render(request, template, contexte)
 
 
-def merci(request):
+def tkank_you_for_your_message(request):
     contacts = Contact.objects.all()
     contexte = {
         'contacts': contacts    
     }
     template = 'portfolio/pages/thanks.html'
     return render(request, template, contexte)
+
+
+def handle_not_found(request, exception):
+    return render(request, 'portfolio/pages/404.html')

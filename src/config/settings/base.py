@@ -14,6 +14,7 @@ import os
 import environ
 
 from pathlib import Path
+from emails import list_emails_to
 
 
 env = environ.Env(DEBUG=(bool, False))
@@ -31,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -70,12 +71,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+
+TEMPLATES_DIRS = [
+    os.path.join(BASE_DIR, 'templates'),
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-        ],
+        'DIRS': TEMPLATES_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,7 +164,4 @@ EMAIL_PORT= env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 # EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 
-EMAIL_LIST_RECIPIENT = [
-    env('EMAIL_RECIVES_1'),
-    env('EMAIL_RECIVES_2'),
-]
+EMAIL_LIST_RECIPIENT = list_emails_to
