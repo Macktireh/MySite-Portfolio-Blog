@@ -1,6 +1,7 @@
 {% load static %}
 
-<div class="projet-box">
+<div class="projet-box aos-item" data-aos="flip-right" data-aos-display="500" data-aos-duration="3000"
+  data-aos-once="true">
   <a href="{% url 'detail_project' slug=project.slug %}">
     <div class="projet-img">
       <img src="{{ project.image.url }}" alt="{{ project.title }}">

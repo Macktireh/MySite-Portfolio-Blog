@@ -11,8 +11,12 @@
   <div class="container-content">
     <div class="header-content">
       <div>
-        <h1>Développeur Python / PowerBI & Data Scientist</h1>
-        <h2>Macktireh Abdi Soubaneh</h2>
+        <h1 class="aos-item" data-aos="zoom-in" data-aos-display="500" data-aos-duration="2000" data-aos-once="false">
+          Développeur Python / PowerBI & Data Scientist</h1>
+        <hr class="aos-item" data-aos-display="flip-left" data-aos-duration="3000">
+        <h2 class="aos-item" data-aos="zoom-out-up" data-aos-display="1500" data-aos-duration="3000"
+          data-aos-once="false">
+          Macktireh Abdi Soubaneh</h2>
       </div>
     </div>
   </div>
@@ -41,7 +45,8 @@
     <hr>
     <div class="competence__container">
       {% for competence in Competences.all %}
-      <div class="competence__container__box">
+      <div class="competence__container__box aos-item" data-aos="fade-up" data-aos-display="500"
+        data-aos-duration="3000" data-aos-once="true">
         <img src="{{ competence.icon.url }}" alt="{{ competence.title }}">
         <h3>{{ competence.title }}</h3>
         <p>{{ competence.description }}</p>

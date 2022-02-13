@@ -6,6 +6,11 @@
   outline: none;
 }
 
+*::selection {
+  background-color: #f31d58;
+  color: #f1f1f1;
+}
+
 a {
   text-decoration: none;
   color: #f1f1f1;
@@ -272,6 +277,15 @@ body {
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
+}
+.header-home .container-content .header-content hr {
+  margin: 3rem auto 2.5rem;
+  width: 4rem;
+  max-width: 3.5rem;
+  height: 0.2rem;
+  background-color: #f31d58;
+  border: none;
+  outline: none;
 }
 .header-home .img-header {
   position: relative;
