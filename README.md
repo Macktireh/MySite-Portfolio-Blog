@@ -51,17 +51,17 @@ Utilisateur <---------> consulter, liker et commenter
 7. body de l'auteur du commentaire
 8. date de création du commentaire
 
-**La table TabLike** :
+**La table Contact** :
 
-1. id de l'article
-2. titre de l'article liker (post) : clef étrangère de la table BlogArticle
-3. like de l'article
+1. nom
+2. adresse mail
+3. message
 
 ## Relation entre les table
 
 BlogArticle N--1 User
 BlogArticle 1--N Comment  
-BlogArticle 1--N TabLike
+
 
 ## Aplication
 
