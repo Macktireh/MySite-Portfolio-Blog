@@ -26,9 +26,9 @@ Utilisateur <---------> consulter, liker et commenter
 ## Modèles de données
 
 * **Base de données** : PostgreSQL
-* **Tables** : BlogArticle, Comment, TabLike
+* **Tables** : Project, Techno, Contact
 
-**La table BlogArticle** :
+**La table Project** :
 
 1. id de l'article
 2. titre de l'article
