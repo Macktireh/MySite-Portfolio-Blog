@@ -532,6 +532,9 @@ main .detail-product-container {
   padding: 10px;
   transition: 0.2s;
 }
+.section-forms form .message-container {
+  margin-top: 1.3rem;
+}
 .section-forms form .message-container textarea {
   height: 200px;
   resize: vertical;

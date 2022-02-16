@@ -103,10 +103,11 @@ class Competence(models.Model):
         
         
 class Contact(models.Model):
-    name = models.CharField(verbose_name='Name', max_length=30)
+    name = models.CharField(verbose_name='Name', max_length=50)
     email = models.EmailField(verbose_name='Adress Email', unique=True)
-    date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
+    subject = models.CharField(verbose_name='Subject', max_length=128, blank=True, null=True)
     message = models.TextField(verbose_name='Message', max_length=10000)
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Date')
     class Meta:
         ordering = ['-date']
     

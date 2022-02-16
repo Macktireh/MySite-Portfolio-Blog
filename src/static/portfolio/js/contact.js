@@ -1,8 +1,9 @@
 const form = document.querySelector("form");
-const inputs = document.querySelectorAll(
-  'input[type="text"], input[type="email"], textarea'
-);
+const inputs = document.querySelectorAll(".form-control");
+
+// console.log(inputs);
 // const progressBar = document.getElementById("progress-bar");
+
 let name, email, message;
 
 const errorDisplay = (tag, message_error, valid) => {

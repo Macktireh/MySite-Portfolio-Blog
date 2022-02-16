@@ -41,22 +41,23 @@
         {% csrf_token %}
         <div class="name-container">
           <label for="name">Nom *</label>
-          <!-- <input type="text" autocomplete="off" id="name"> -->
           {{ forms.name }}
           <span></span>
         </div>
 
         <div class="email-container">
           <label for="email">Email *</label>
-          <!-- <input type="email" autocomplete="off" id="email"> -->
           {{ forms.email }}
-          <span>Email incorrect</span>
+          <span></span>
+        </div>
+
+        <div class="subject-container">
+          <label for="subject">Objet</label>
+          {{ forms.subject }}
         </div>
 
         <div class="message-container">
           <label for="message">Message *</label>
-          <!-- <textarea name="" id="message" cols="30" rows="10"></textarea> -->
-          <!-- {{ forms. }} -->
           {{ forms.message }}
           <span></span>
         </div>
@@ -67,10 +68,7 @@
   </div>
 </main>
 {% endblock content %} {% block js %}
-<script
-  type="text/javascript"
-  src=" {% static 'portfolio/js/contact.js' %} "
-></script>
+<script type="text/javascript" src=" {% static 'portfolio/js/contact.js' %} "></script>
 <!-- <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script> -->
 {% endblock %}
