@@ -55,6 +55,7 @@ Utilisateur <---------> consulter, liker et commenter
 
 1. nom
 2. adresse mail
+3. subject
 3. message
 
 ## Relation entre les table
