@@ -44,12 +44,12 @@ class Project(models.Model):
         ('Avancé', 'Avancé')
     )
     niveau = models.CharField(max_length=60, choices=list_niveau, verbose_name='Niveau')
-    create_date = models.DateTimeField(auto_now_add=True, verbose_name='Date Creation')
-    update_date = models.DateTimeField(auto_now=True, verbose_name='Date de Modification')
     technology = models.CharField(max_length=500, verbose_name='Technologie')
     introduction = models.TextField(verbose_name='Introduction')
     body = RichTextField(blank=True, null=True)
     image = models.ImageField(upload_to=rename_img)
+    create_date = models.DateTimeField(auto_now_add=True, verbose_name='Date Creation')
+    update_date = models.DateTimeField(auto_now=True, verbose_name='Date de Modification')
     
     STATUS_CHOICES = (
         ('draft', 'Brouillon'),

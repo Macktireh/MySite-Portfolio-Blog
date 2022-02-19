@@ -1,7 +1,7 @@
-@import "./settings";
-@import "./placehoder";
-@import "./mixins";
-@import "./global";
+@import "./utils/settings";
+@import "./utils/placehoder";
+@import "./utils/mixins";
+@import "./utils/global";
 
 @import "./components/navigation";
 @import "./components/card-project";

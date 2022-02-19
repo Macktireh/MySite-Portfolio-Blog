@@ -1,14 +1,13 @@
 {% load static %}
 
-<div class="projet-box aos-item" data-aos="flip-right" data-aos-display="500" data-aos-duration="3000"
-  data-aos-once="true">
+<div class="projet-box">
   <a href="{% url 'detail_project' slug=project.slug %}">
     <div class="projet-img">
       <img src="{{ project.image.url }}" alt="{{ project.title }}">
     </div>
 
     <div class="projet-text">
-      <span>{{ project.published_date|date:"d/m/Y" }} | par {{ project.author.first_name }}</span>
+      <span>Publié le {{ project.published_date|date:"d/m/Y" }} par {{ project.author.first_name }}</span>
       <h5 class="projet-title">{{ project.title }}</h5>
       <p class="intro">
         {{ project.introduction }}.

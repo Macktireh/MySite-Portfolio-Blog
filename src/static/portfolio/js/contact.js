@@ -21,7 +21,7 @@ const errorDisplay = (tag, message_error, valid) => {
 
 const nameChecker = (value) => {
   if (value.length > 0 && (value.length < 3 || value.length > 30)) {
-    errorDisplay("name", "Le nom doit faire entre 3 et 30 caractères");
+    errorDisplay("name", "Le nom doit faire entre 3 et 50 caractères");
     name = null;
   } else if (!value.match(/^[a-zA-Z -]*$/)) {
     errorDisplay(

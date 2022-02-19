@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -164,4 +164,4 @@ EMAIL_PORT= env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 # EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 
-EMAIL_LIST_RECIPIENT = list_emails_to
+EMAIL_LIST_RECIPIENT = env("EMAIL_RECIVES").split(" ")
