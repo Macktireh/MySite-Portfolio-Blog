@@ -14,8 +14,6 @@ import os
 import environ
 
 from pathlib import Path
-from emails import list_emails_to
-
 
 env = environ.Env(DEBUG=(bool, False))
 
