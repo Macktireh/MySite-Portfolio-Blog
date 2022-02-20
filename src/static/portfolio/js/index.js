@@ -30,6 +30,6 @@ BtnTop.addEventListener("click", () => {
   arrow_up.classList.add("arrow-up-click");
 });
 
-arrow_up.addEventListener("click", () => {
-  arrow_up.classList.add("arrow-up-click");
-});
+// arrow_up.addEventListener("click", () => {
+//   arrow_up.classList.add("arrow-up-click");
+// });

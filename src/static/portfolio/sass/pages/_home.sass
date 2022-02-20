@@ -8,38 +8,44 @@
     text-align: center
     position: relative
     // border-bottom: 1px solid $color5
-    display: grid
-    grid-template-columns: 60% 40%
+    // display: grid
+    // grid-template-columns: 60% 40%
+    // @extend .flex-center
 
     .container-content
-        position: relative
-
-        .header-content
-            width: 100%
-            position: absolute
-            left: 50%
-            top: 30%
-            transform: translate(-50%, -50%)
-            hr
-                @include hr-el(3rem, 2.5rem, 4rem, $color3)
-
-    .img-header
-        position: relative
+        width: 90%
+        max-width: 1000px
+        @include position-abs(50%, 40%, -50%, -50%)
+        hr
+            @include hr-el(2.5rem, 1.5rem, 4rem, $color3)
+        .container-tags-competence
+            margin: 0.5rem auto
+            width: 90%
+            max-width: 380px
+            .p-tags-competence
+                padding: 0.5rem
+                font-family: $font4
+                // text-align: left
 
         .img-box
-            @include position-abs(40%, 40%, -50%, -50%)
             @extend .flex-center
-            flex-direction: column
-
+            gap: 25px
+            margin: 0.5rem 0
             .python
+                padding-top: 10px
                 height: 5rem
                 width: auto
-                display: inline-block
-
-            .powerbi
-                height: 3rem
+            .django
+                height: 3.5rem
                 width: auto
-                display: block
+            .js
+                height: 2.5rem
+                margin: 0 0.3rem
+                width: auto
+                border-radius: 5px
+            .powerbi
+                height: 2.5rem
+                width: auto
 
 // ###########################################################################################################################
 // Main
@@ -87,15 +93,17 @@
         @include hr-el(1rem, 2rem, 3.5rem, $color3)
 
     &__container
-        width: 90%
+        width: 100%
+        max-width: 1200px
         @extend .flex-center
         flex-wrap: wrap
         // border: 1px solid $color2
         margin: 0 auto
-        padding: 2rem
+        padding: 1rem
 
         &__box
-            width: 290px
+            width: 90%
+            max-width: 290px
             // border: 1px solid $color3
             padding: 1rem
             margin: 2rem
@@ -107,6 +115,15 @@
             h3
                 padding: 0.1rem 0 0.5rem 0
 
+@media screen and (max-width:550px)
+    .competence
+        padding: 40px 25px
+        &__container
+            padding: 0
+            &__box
+                width: 97%
+                padding: 0.5rem
+                margin: 1rem
 // #################################################
     // Section projet
 // #################################################
