@@ -157,4 +157,28 @@
         padding: 1rem 2.5rem
         color: $color2
         border: 1px solid $color2
-        border-radius: 5px
+        border-radius: 150px
+        transition: 0.5s
+        position: relative
+        z-index: 500
+        overflow: hidden
+
+        &::before
+            content: ""
+            display: block
+            background-color: $color3
+            height: 100%
+            width: 0
+            border-radius: 150px
+            position: absolute
+            left: 0
+            bottom: 0
+            z-index: -1
+            transition: 0.3s
+
+        &:active
+            transform: scale(0.97)
+        &:hover::before
+            width: 100%
+        &:hover
+            border: none
