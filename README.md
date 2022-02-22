@@ -13,7 +13,7 @@ Les principales sujets du site :
 * **Machine Learning** : collocter traiter, analyser, modeliser et déployer
 * **Dévéloppement Web** : céer des sites application web avec Python (Django, Flask, Streamlit et FastAPI), HTML, CSS et Javascript
 * **Dévéloppement Mobile** : céer des sites application mobiles avec Fluter
-* **Dashboaring** céer des sites application dashboard avec Power BI et Dash Plotly
+* **Dashboaring** créer des sites application dashboard avec Power BI et Dash Plotly
 
 Les principales utilisateurs sont : `Recruteur`, `Toutes personnes intéresser`
 
