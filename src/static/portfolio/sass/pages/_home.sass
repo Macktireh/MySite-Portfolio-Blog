@@ -55,7 +55,8 @@
     // Section presentation
 // #################################################
 .presentation
-    height: 25rem
+    // height: 25rem
+    @extend .flex-center
     width: 100%
     text-align: center
     position: relative
@@ -64,10 +65,10 @@
         width: 80%
         padding: 2rem
         // border: 1px solid $color3
-        position: absolute
-        left: 50%
-        top: 40%
-        transform: translate(-50%, -50%)
+        // position: absolute
+        // left: 50%
+        // top: 40%
+        // transform: translate(-50%, -50%)
 
         hr
             @include hr-el(1rem, 1.5rem, 3.5rem, $color5)
@@ -77,6 +78,14 @@
             line-height: 180%
             font-size: 16px
 
+@media screen and (max-width:800px)
+    .presentation
+        .container-presntation
+            width: 90%
+@media screen and (max-width:700px)
+    .presentation
+        .container-presntation
+            width: 100%
 // #################################################
     // Section competence
 // #################################################

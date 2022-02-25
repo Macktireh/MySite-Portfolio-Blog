@@ -20,7 +20,7 @@ a:visited {
   color: #f1f1f1;
 }
 
-.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .main-blog .blog, .main-detail-project .container-detail-project .published-info, .main-detail-project .container-detail-project .box-title, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .header-home .container-content .img-box, .projet-box .card-contenaire .card-botton .box-level, .projet-box .card-contenaire .card-botton .box-like, .projet-box .card-contenaire .card-botton .box-comment, .nav-bar .logo, .btn-top {
+.flex-center, footer .footer-content .footer-content-box .footer-logo, .thanks-container, .section-forms, .contact, .main-blog .blog, .main-detail-project .container-detail-project .published-info, .main-detail-project .container-detail-project .box-title, .projects .projet-container, .projects .projet-heading, .projects, .competence__container, .competence, .presentation, .header-home .container-content .img-box, .projet-box .card-contenaire .card-botton .box-level, .projet-box .card-contenaire .card-botton .box-like, .projet-box .card-contenaire .card-botton .box-comment, .nav-bar .logo, .btn-top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,7 +328,6 @@ body {
 }
 
 .presentation {
-  height: 25rem;
   width: 100%;
   text-align: center;
   position: relative;
@@ -337,10 +336,6 @@ body {
 .presentation .container-presntation {
   width: 80%;
   padding: 2rem;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
 }
 .presentation .container-presntation hr {
   margin: 1rem auto 1.5rem;
@@ -357,6 +352,16 @@ body {
   font-size: 16px;
 }
 
+@media screen and (max-width: 800px) {
+  .presentation .container-presntation {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .presentation .container-presntation {
+    width: 100%;
+  }
+}
 .competence {
   width: 100%;
   text-align: center;
@@ -701,6 +706,9 @@ body {
   }
   .contact-container .section-forms {
     margin-top: 2rem;
+  }
+  .contact-container .section-forms form {
+    padding: 60px 25px 30px;
   }
 }
 .thanks-container {
