@@ -154,12 +154,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Config Send Email
-EMAIL_BACKEND = env('EMAIL_BACKEND')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT= env('EMAIL_PORT')
-EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_BACKEND = env('EMAIL_BACKEND', default="")
+EMAIL_HOST = env('EMAIL_HOST', default="")
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default="")
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default="")
+EMAIL_PORT= env('EMAIL_PORT', default="")
+EMAIL_USE_TLS = env('EMAIL_USE_TLS', default=True)
 # EMAIL_USE_SSL = env('EMAIL_USE_SSL')
 
-EMAIL_LIST_RECIPIENT = env("EMAIL_RECIVES").split(" ")
+EMAIL_LIST_RECIPIENT = env("EMAIL_RECIVES", default="").split(" ")
